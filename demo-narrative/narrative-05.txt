@@ -1,0 +1,13 @@
+Let's give it a go then. Say we want to setup NIM on OCP we might specify the service, the intent and the platform.
+
+This will match to the recpie template we saw earlier and will produce a recipe for us.
+
+We can see the components that were included and the location of the file.
+
+The file is a bit difficult for human inspection, but at the end we can see components referenced, the deployment order and the way in which the overlays are combined. We can also see the point for validation.
+
+Note NIM istelf is not deployed here, as it has not been configured as a component. It is expected to be installed separately on top of this stack.
+
+We can imagine in future KServe might be added as a component and a Recipe template created for it, and this should be able to install the whole stack.
+
+Similarly we could have tried the training intent. Most of the same components would be present, but it will not install kubeflow on OCP since it will require a specific recipe template.
