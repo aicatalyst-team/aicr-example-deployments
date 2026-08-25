@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: "nvidia-stack"
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/aicatalyst-team/aicr-example-deployments.git
+    targetRevision: main
+    path: ocp/inference-nim/bundles
+    directory:
+      recurse: true
+      include: '*/application.yaml'
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
