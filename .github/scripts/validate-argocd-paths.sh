@@ -29,11 +29,13 @@ fi
 # Function to validate any ArgoCD Application YAML
 validate_argocd_app() {
     local file="$1"
-    local dir=$(dirname "$file")
+    local dir
+    dir=$(dirname "$file")
     local expected_path="${dir#./}"  # Remove leading ./
 
     # Try to get single-source path
-    local actual_path=$(yq eval '.spec.source.path // ""' "$file")
+    local actual_path
+    actual_path=$(yq eval '.spec.source.path // ""' "$file")
 
     # If single-source path exists, validate it
     if [ -n "$actual_path" ]; then
@@ -52,11 +54,13 @@ validate_argocd_app() {
     fi
 
     # Check for multi-source with $values reference
-    local values_path=$(yq eval '.spec.sources[].helm.valueFiles[]' "$file" 2>/dev/null | grep -E '^\$values/' | head -1 || true)
+    local values_path
+    values_path=$(yq eval '.spec.sources[].helm.valueFiles[]' "$file" 2>/dev/null | grep -E '^\$values/' | head -1 || true)
 
     if [ -n "$values_path" ]; then
         # Extract path from $values/path/to/dir/values.yaml
-        local extracted_path=$(echo "$values_path" | sed -E 's/^\$values\///' | sed -E 's/\/values\.yaml$//')
+        local extracted_path
+        extracted_path=$(echo "$values_path" | sed -E 's/^\$values\///' | sed -E 's/\/values\.yaml$//')
         extracted_path="${extracted_path#./}"
 
         if [ "$extracted_path" != "$expected_path" ]; then

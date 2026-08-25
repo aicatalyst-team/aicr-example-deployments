@@ -2,6 +2,21 @@
 
 This directory contains GitHub Actions workflows and supporting scripts for the repository.
 
+## Workflows
+
+### ShellCheck (`workflows/shellcheck.yml`)
+
+Runs [ShellCheck](https://www.shellcheck.net/) on all bash scripts in the repository.
+
+- **Triggers**: PRs and pushes to main when `.sh` files change
+- **Severity**: Only reports warnings and errors (ignores info and style messages)
+- **Exit code**: Returns 0 if no warnings/errors found
+
+Run locally:
+```bash
+shellcheck --severity=warning *.sh
+```
+
 ## ArgoCD Path Management
 
 ### Overview

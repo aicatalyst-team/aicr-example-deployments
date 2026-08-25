@@ -94,7 +94,7 @@ update_file() {
         echo -e "${YELLOW}[DRY RUN] Would update: $file${NC}"
         echo "  Change: $description"
         grep "$pattern" "$file" | head -1 | sed 's/^/  Before: /'
-        echo "  After:  $(echo "$(grep "$pattern" "$file" | head -1)" | sed -E "$replacement")"
+        echo "  After:  $(grep "$pattern" "$file" | head -1)" | sed -E "$replacement"
     else
         echo -e "${GREEN}✓ Updating: $file${NC}"
         echo "  Change: $description"
