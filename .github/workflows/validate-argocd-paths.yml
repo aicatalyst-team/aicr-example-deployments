@@ -1,0 +1,63 @@
+name: Validate ArgoCD Paths
+
+on:
+  pull_request:
+    paths:
+      - '**/app-of-apps.yaml'
+      - '**/application.yaml'
+      - '.github/workflows/validate-argocd-paths.yml'
+      - '.github/scripts/validate-argocd-paths.sh'
+  push:
+    branches:
+      - main
+    paths:
+      - '**/app-of-apps.yaml'
+      - '**/application.yaml'
+      - '.github/workflows/validate-argocd-paths.yml'
+      - '.github/scripts/validate-argocd-paths.sh'
+
+jobs:
+  validate:
+    name: Validate ArgoCD Application Paths
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Make validation script executable
+        run: chmod +x .github/scripts/validate-argocd-paths.sh
+
+      - name: Run path validation
+        run: .github/scripts/validate-argocd-paths.sh
+
+      - name: Comment on PR (if validation fails)
+        if: failure() && github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const message = `## ❌ ArgoCD Path Validation Failed
+
+            One or more ArgoCD application manifests have incorrect paths that don't match their file locations.
+
+            ### How to fix
+
+            Run the path fixer script on the affected bundle directory:
+
+            \`\`\`bash
+            ./fix-argocd-paths.sh <bundle-directory>
+            \`\`\`
+
+            For example:
+            \`\`\`bash
+            ./fix-argocd-paths.sh ocp/inference-nim/bundles
+            \`\`\`
+
+            See the workflow logs for details about which files failed validation.`;
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: message
+            });

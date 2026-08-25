@@ -1,0 +1,66 @@
+# Copyright (c) 2026, NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+apiVersion: nvidia.com/v1
+kind: ClusterPolicy
+metadata:
+  name: cluster-policy
+  annotations: {}
+  labels:
+    app.kubernetes.io/managed-by: Helm
+spec:
+  operator:
+    defaultRuntime: crio
+  driver:
+    enabled: true
+    kernelModuleType: auto
+    rdma:
+      enabled: true
+      useHostMofed: false
+  cdi:
+    enabled: true
+    default: true
+  dcgm:
+    enabled: true
+  gfd:
+    enabled: true
+  dcgmExporter:
+    enabled: true
+    config:
+      name: dcgm-exporter
+    serviceMonitor:
+      enabled: true
+  devicePlugin:
+    enabled: true
+  toolkit:
+    enabled: true
+    installDir: /usr/local/nvidia
+    env:
+      - name: ACCEPT_NVIDIA_VISIBLE_DEVICES_ENVVAR_WHEN_UNPRIVILEGED
+        value: "false"
+      - name: ACCEPT_NVIDIA_VISIBLE_DEVICES_AS_VOLUME_MOUNTS
+        value: "true"
+  migManager:
+    enabled: true
+  gdrcopy:
+    enabled: true
+  sandboxWorkloads:
+    enabled: false
+  nodeStatusExporter:
+    enabled: true
+  daemonsets:
+    rollingUpdate:
+      maxUnavailable: "1"
+    tolerations:
+      - operator: Exists
+    updateStrategy: RollingUpdate
