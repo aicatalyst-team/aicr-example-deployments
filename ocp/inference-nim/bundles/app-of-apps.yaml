@@ -2,11 +2,11 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: "nvidia-stack"
-  namespace: argocd
+  namespace: openshift-gitops
 spec:
   project: default
   source:
-    repoURL: https://github.com/aicatalyst-team/aicr-example-deployments.git
+    repoURL: git@github.com:aicatalyst-team/aicr-example-deployments.git
     targetRevision: main
     path: ocp/inference-nim/bundles
     directory:
@@ -14,7 +14,7 @@ spec:
       include: '*/application.yaml'
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd
+    namespace: openshift-gitops
   syncPolicy:
     automated:
       prune: true

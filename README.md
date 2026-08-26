@@ -19,7 +19,7 @@ aicr recipe list --service ocp
 For example to create a `recipe` for inference with NIM use:
 
 ```bash
-aicr recipe --service ocp --intent training --platform nim  --output ocp/inference-nim/recipe-ocp-nim.yaml
+aicr recipe --service ocp --intent inference --platform nim  --output ocp/inference-nim/recipe-ocp-nim.yaml
 ```
 
 ## AICR Bundles
