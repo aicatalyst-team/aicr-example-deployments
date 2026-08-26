@@ -29,5 +29,5 @@ roleRef:
   name: cluster-monitoring-view
 subjects:
   - kind: ServiceAccount
-    name: <no value>
+    name: prometheus-adapter-ocp
     namespace: monitoring
