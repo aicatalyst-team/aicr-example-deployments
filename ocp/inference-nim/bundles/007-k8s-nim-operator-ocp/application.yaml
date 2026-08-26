@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: "k8s-nim-operator-ocp"
-  namespace: argocd
+  namespace: openshift-gitops
   annotations:
     argocd.argoproj.io/sync-wave: "17"
 spec:
@@ -14,7 +14,7 @@ spec:
       helm:
         valueFiles:
           - $values/ocp/inference-nim/bundles/007-k8s-nim-operator-ocp/values.yaml
-    - repoURL: 'https://github.com/aicatalyst-team/aicr-example-deployments.git'
+    - repoURL: 'git@github.com:aicatalyst-team/aicr-example-deployments.git'
       targetRevision: main
       ref: values
   destination:

@@ -2,13 +2,13 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: "nfd-ocp-olm"
-  namespace: argocd
+  namespace: openshift-gitops
   annotations:
     argocd.argoproj.io/sync-wave: "1"
 spec:
   project: "default"
   source:
-    repoURL: 'https://github.com/aicatalyst-team/aicr-example-deployments.git'
+    repoURL: 'git@github.com:aicatalyst-team/aicr-example-deployments.git'
     targetRevision: main
     path: ocp/inference-nim/bundles/001-nfd-ocp-olm
   destination:

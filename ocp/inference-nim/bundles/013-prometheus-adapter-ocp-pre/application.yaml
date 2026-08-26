@@ -2,13 +2,13 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: "prometheus-adapter-ocp-pre"
-  namespace: argocd
+  namespace: openshift-gitops
   annotations:
     argocd.argoproj.io/sync-wave: "0"
 spec:
   project: "default"
   source:
-    repoURL: 'https://github.com/aicatalyst-team/aicr-example-deployments.git'
+    repoURL: 'git@github.com:aicatalyst-team/aicr-example-deployments.git'
     targetRevision: main
     path: ocp/inference-nim/bundles/013-prometheus-adapter-ocp-pre
   destination:
