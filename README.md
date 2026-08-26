@@ -46,3 +46,19 @@ Use the `fix-argocd-path.sh` script to fix this path after creation of a bundle 
 ```
 
 > The CI in this repo checks that the path has been set.
+
+## Configuring Argo CD
+
+
+### ArgoCD permissions
+
+As ArgoCD tries to install artefacts in to various namespaces, the default permissions its service account has will not be enough.
+
+Grant Argo the Cluster Admin role, or give it more fine grained permissions.
+
+To give it `cluster-admin` (not recommended for production systems) use:
+
+```
+oc adm policy add-cluster-role-to-user cluster-admin \
+  system:serviceaccount:openshift-gitops:openshift-gitops-argocd-application-controller
+```
