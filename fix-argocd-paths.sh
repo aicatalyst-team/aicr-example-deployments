@@ -147,7 +147,8 @@ update_yaml_field() {
     fi
 
     # Get current value
-    local current_value=$(yq eval "$yq_path" "$file" 2>/dev/null)
+    local current_value
+    current_value=$(yq eval "$yq_path" "$file" 2>/dev/null)
 
     if [ "$current_value" == "null" ] || [ -z "$current_value" ]; then
         if [ "$allow_create" != "true" ]; then
