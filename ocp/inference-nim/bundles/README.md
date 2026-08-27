@@ -1,7 +1,7 @@
 # Argo CD Deployment Bundle
 
-Bundler Version: 0.19.0
-Recipe Version: 0.19.0
+Bundler Version: 0.20.0
+Recipe Version: 0.20.0
 
 ## Overview
 

@@ -266,7 +266,7 @@ else
     echo -e "${YELLOW}⚠ Skipping: prometheus-adapter RBAC file not found${NC}"
 fi
 
-# Fix network-operator subscription name
+# Fix network-operator subscription name and channel
 NETWORK_OP_SUB="$BUNDLE_DIR_CLEAN/009-network-operator-ocp-olm/templates/subscription.yaml"
 if [ -f "$NETWORK_OP_SUB" ]; then
     update_yaml_field \
@@ -281,6 +281,13 @@ if [ -f "$NETWORK_OP_SUB" ]; then
         ".spec.name" \
         "nvidia-network-operator" \
         "spec.name → nvidia-network-operator (Subscription operator name)" \
+        "false"
+
+    update_yaml_field \
+        "$NETWORK_OP_SUB" \
+        ".spec.channel" \
+        "stable" \
+        "spec.channel → stable (Subscription channel)" \
         "false"
 else
     echo -e "${YELLOW}⚠ Skipping: network-operator subscription file not found${NC}"

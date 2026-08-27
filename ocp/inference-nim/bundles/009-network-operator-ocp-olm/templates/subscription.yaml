@@ -20,7 +20,7 @@ metadata:
   labels:
     app.kubernetes.io/managed-by: Helm
 spec:
-  channel: v24.7
+  channel: stable
   name: nvidia-network-operator
   source: certified-operators
   sourceNamespace: openshift-marketplace
