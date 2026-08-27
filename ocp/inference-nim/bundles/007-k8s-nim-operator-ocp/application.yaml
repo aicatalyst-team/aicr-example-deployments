@@ -13,10 +13,11 @@ spec:
       targetRevision: 3.1.0
       helm:
         valueFiles:
-          - $values/ocp/inference-nim/bundles/007-k8s-nim-operator-ocp/values.yaml
+          - $values/007-k8s-nim-operator-ocp/values.yaml
     - repoURL: 'git@github.com:aicatalyst-team/aicr-example-deployments.git'
       targetRevision: main
       ref: values
+      path: ocp/inference-nim/bundles
   destination:
     server: "https://kubernetes.default.svc"
     namespace: "nvidia-nim"

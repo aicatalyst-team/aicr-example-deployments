@@ -50,6 +50,37 @@ Use the `fix-argocd-path.sh` script to fix this path after creation of a bundle 
 ## Configuring Argo CD
 
 
+If Argo CD is not already on the cluster install it through the OpenShift Console or with:
+
+```bash
+oc apply -f - <<EOF
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: openshift-gitops-operator
+---
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: openshift-gitops-operator
+  namespace: openshift-gitops-operator
+spec:
+  upgradeStrategy: Default
+---
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: openshift-gitops-operator
+  namespace: openshift-gitops-operator
+spec:
+  channel: latest
+  installPlanApproval: Automatic
+  name: openshift-gitops-operator
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace
+EOF
+```
+
 ### ArgoCD permissions
 
 As ArgoCD tries to install artefacts in to various namespaces, the default permissions its service account has will not be enough.
@@ -62,3 +93,46 @@ To give it `cluster-admin` (not recommended for production systems) use:
 oc adm policy add-cluster-role-to-user cluster-admin \
   system:serviceaccount:openshift-gitops:openshift-gitops-argocd-application-controller
 ```
+
+### Argo CD Management Inferface
+
+The route to the Argo CD Management interfaces should be available through
+
+```bash
+oc -n openshift-gitops get route
+```
+
+You can login with user `admin` and get the password from:
+
+```bash
+oc -n openshift-gitops get secret openshift-gitops-cluster -o yaml | yq '.data."admin.password"' | base64 -d
+```
+
+### Argo CLI
+
+You should be able to connect to Argo with the [Argo CD CLI](https://argo-cd.readthedocs.io/en/stable/cli_installation/) like:
+
+```bash
+ARGOCD_ROUTE=<route from above>
+ARGOCD_PASSWORD=<password from above>
+argocd login https://$ARGOCD_ROUTE --insecure --username admin --password $ARGOCD_PASSWORD
+```
+
+At this stage you should be able to list apps, but the list will be empty:
+
+```bash
+argocd app list
+NAME  CLUSTER  NAMESPACE  PROJECT  STATUS  HEALTH  SYNCPOLICY  CONDITIONS  REPO  PATH  TARGET
+```
+
+Add the repo that was given in the `aicr bumdle` command above:
+
+```bash
+argocd repo add git@github.com:aicatalyst-team/aicr-example-deployments.git --insecure-ignore-host-key --ssh-private-key-path ~/.ssh/id_ecdsa
+```
+
+> Correct for your location for your Private SSH key
+
+## Apply the configuration
+
+As Argo is full setup now, you can continue from step #3 in the generated README.md of the project [e.g. README.md](./ocp/inference-nim/bundles/README.md).
