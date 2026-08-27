@@ -293,6 +293,26 @@ else
     echo -e "${YELLOW}⚠ Skipping: network-operator subscription file not found${NC}"
 fi
 
+# Fix network-operator OperatorGroup spec
+NETWORK_OP_GROUP="$BUNDLE_DIR_CLEAN/009-network-operator-ocp-olm/templates/operatorgroup.yaml"
+if [ -f "$NETWORK_OP_GROUP" ]; then
+    # Check if spec.targetNamespaces already exists
+    if ! yq eval '.spec.targetNamespaces' "$NETWORK_OP_GROUP" 2>/dev/null | grep -q 'nvidia-network-operator'; then
+        if [ "$DRY_RUN" = true ]; then
+            echo -e "${YELLOW}[DRY RUN] Would update: $NETWORK_OP_GROUP${NC}"
+            echo "  Change: Add spec.targetNamespaces → [nvidia-network-operator]"
+        else
+            echo -e "${GREEN}✓ Updating: $NETWORK_OP_GROUP${NC}"
+            echo "  Change: Add spec.targetNamespaces → [nvidia-network-operator]"
+            yq eval -i '.spec.targetNamespaces = ["nvidia-network-operator"]' "$NETWORK_OP_GROUP"
+        fi
+    else
+        echo -e "${YELLOW}⚠ Skipping: $NETWORK_OP_GROUP (spec.targetNamespaces already set)${NC}"
+    fi
+else
+    echo -e "${YELLOW}⚠ Skipping: network-operator OperatorGroup file not found${NC}"
+fi
+
 echo ""
 
 # Regenerate checksums

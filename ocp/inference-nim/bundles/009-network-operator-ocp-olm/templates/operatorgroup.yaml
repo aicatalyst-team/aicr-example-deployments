@@ -19,3 +19,6 @@ metadata:
   annotations: {}
   labels:
     app.kubernetes.io/managed-by: Helm
+spec:
+  targetNamespaces:
+    - nvidia-network-operator
