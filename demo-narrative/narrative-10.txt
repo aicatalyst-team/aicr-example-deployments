@@ -1,0 +1,13 @@
+Looking at the overall flow then from start to finish, it's easy to see how a tool like this, with the might of Nvidia behind it, would gain traction, especailly across multiple cloud providers.
+
+It's an active project, constantly being updated, with releases every few weeks.
+
+So how could this be expanded to work more seamlessly with OpenShift?
+
+Compatibility is the first concern. It has gone a long way by integrating with Operator Lifecycle Management, but flexibility in the bundle command would help with the namespace.
+
+As far as Components and Recipes are concerned a lot more could be added to align with the OpenShift stack, such as KServe, MLFlow, Kubeflow trainer, Ray Trainer, TrustyAI etc. Even the OpenShift AI operator itself could be added as a component, and with different recipies for the different configurations it could have.
+
+In addition there could be additional services aimed at configuring managed OpenShift like ROSA, ROKS etc. which could combine the best of the configuration of particular cloud providers, with the best of OpenShift.
+
+Thanks for watching. We'll continue to track and investigate AICR for future OpenShift integrations.

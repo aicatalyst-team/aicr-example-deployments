@@ -1,0 +1,15 @@
+Previously I checked in this bundle in to this shared repo.
+
+Let's look at a few things that need correction. 
+
+First the sub path cannot be passed in the AICR tool, so we have to manually adjust this.
+
+Neither can the namespace for argo be set - we have to manually override this to be openshift-gitops.
+
+Hopefully these can be added to the bundle command in future.
+
+There are some other adjustments that have to be done that are wrong in the component. These could have been changed with the set option of the bundle command.
+
+We have a script here that fixes these things and leaves the Argo config ready to be deployed.
+
+The signature is invalid now as we've had to change values, but we'll carry on.

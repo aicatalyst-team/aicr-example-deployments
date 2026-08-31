@@ -53,50 +53,25 @@ validate_argocd_app() {
         return
     fi
 
-    # Check for multi-source with ref: values
-    local ref_index
-    ref_index=$(yq eval '.spec.sources | to_entries | .[] | select(.value.ref == "values") | .key' "$file" 2>/dev/null || true)
+    # Check for multi-source with $values reference
+    local values_path
+    values_path=$(yq eval '.spec.sources[].helm.valueFiles[]' "$file" 2>/dev/null | grep -E '^\$values/' | head -1 || true)
 
-    if [ -n "$ref_index" ]; then
-        # This is a multi-source app with ref: values
-        # The source with ref: values should have a path pointing to the bundle directory
-        local ref_source_path
-        ref_source_path=$(yq eval ".spec.sources[$ref_index].path // \"\"" "$file")
+    if [ -n "$values_path" ]; then
+        # Extract path from $values/path/to/dir/values.yaml
+        local extracted_path
+        extracted_path=$(echo "$values_path" | sed -E 's/^\$values\///' | sed -E 's/\/values\.yaml$//')
+        extracted_path="${extracted_path#./}"
 
-        # Get the bundle directory (parent of the component folder)
-        local bundle_dir
-        bundle_dir=$(dirname "$expected_path")
-
-        # Check the ref: values source has the correct path
-        if [ "$ref_source_path" != "$bundle_dir" ]; then
+        if [ "$extracted_path" != "$expected_path" ]; then
             echo -e "${RED}✗ FAIL: $file${NC}"
-            echo -e "  Expected: .spec.sources[$ref_index].path: $bundle_dir"
-            echo -e "  Found:    .spec.sources[$ref_index].path: $ref_source_path"
+            echo -e "  Expected: \$values/$expected_path/values.yaml"
+            echo -e "  Found:    $values_path"
             echo ""
             ((ERRORS++))
-            return
+        else
+            echo -e "${GREEN}✓ PASS: $file${NC}"
         fi
-
-        # Check that $values references are relative (component folder only)
-        local values_path
-        values_path=$(yq eval '.spec.sources[].helm.valueFiles[]' "$file" 2>/dev/null | grep -E '^\$values/' | head -1 || true)
-
-        if [ -n "$values_path" ]; then
-            local component_folder
-            component_folder=$(basename "$expected_path")
-            local expected_values_ref="\$values/$component_folder/values.yaml"
-
-            if [ "$values_path" != "$expected_values_ref" ]; then
-                echo -e "${RED}✗ FAIL: $file${NC}"
-                echo -e "  Expected: $expected_values_ref (relative to ref source path)"
-                echo -e "  Found:    $values_path"
-                echo ""
-                ((ERRORS++))
-                return
-            fi
-        fi
-
-        echo -e "${GREEN}✓ PASS: $file${NC}"
         return
     fi
 

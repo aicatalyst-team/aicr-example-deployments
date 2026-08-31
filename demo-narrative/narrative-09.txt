@@ -1,0 +1,5 @@
+I also mentioned earlier, the snapshot mechanism. In reality this is not as useful as you would hope and does not recognize an OpenShift cluster directly.
+
+It really just takes an inventory of the GPUs on a cluster, and only of one node. Since none of the OpenShift recipes are keyed to GPU type, there is little value to be had there at present.
+
+The validate command ...

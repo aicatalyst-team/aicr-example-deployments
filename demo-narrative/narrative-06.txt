@@ -1,4 +1,4 @@
-Let's look next at what happens this recipe we've created.
+Now we have the recipe, we can proceed towards deploying.
 
 We can run the bundle command on it to create a configuration for Argo CD to deploy.
 
@@ -6,12 +6,8 @@ Let's bundle for Argo and also cryptographically sign the bundles while we're at
 
 There are several other options here to customize the bundle, such as setting node affinity etc.
 
-We specify the name of the recipe, the output location and optionally the flag to attest. You can use your own key here if you want.
+We specify the name of the recipe, the output location and optionally the flag to attest. You can use your own key for this if you want.
 
 It brings us to SigStore to sign it, and it returns on the CLI when done. This will fail if anything has been tampered with in the aicr binary or recipes.
 
 The bundle is created and we can see the usual Argo CD structure the app of apps, and the individual components beneath. The README gives a good summary of the sync waves.
-
-In the bundle we have to replace the repo with our repo name that we version the bundle in. We could have specified this with the command.
-
-Let's check our bundle in and point our cluster at it.
