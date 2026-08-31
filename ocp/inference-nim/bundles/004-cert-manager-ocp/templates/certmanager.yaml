@@ -19,6 +19,9 @@ metadata:
   labels:
     app.kubernetes.io/managed-by: Helm
 spec:
+  managementState: Managed
+  logLevel: Normal
+  operatorLogLevel: Normal
   controllerConfig:
     overrideResources:
       limits:
