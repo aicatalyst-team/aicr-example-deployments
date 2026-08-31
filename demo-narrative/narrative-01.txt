@@ -1,8 +1,8 @@
 Configuring an AI Stack is a complex task that can include some guess work, a bit of overspecing and trial and error.
 
-Nvidia is one of the experts on GPU hardware and software stacks. Imagine being able to over a hundred of their recipies inside a tool. Well that's what AICR gives you.
+Nvidia is one of the experts on GPU hardware and related software stacks. Imagine being able to over a hundred of their configuration recipies inside a tool. Well that's what AICR gives you.
 
-It stands for AI Cluster Runtime, which is a little counterintuitive, as it's really a tool that give you guided Cluster  Configurations which can then be deployed on a cluster with ArgoCD, Helm, Fuse or other deployment mechanisms.
+It stands for AI Cluster Runtime, which is a little counterintuitive, as it's really a tool that give you guided Cluster Configurations which can then be deployed on a cluster with ArgoCD, Helm, Fuse or other deployment mechanisms.
 
 It supports many different cloud service providers, gpu type, and platforms with 2 intents - training and inference.
 

@@ -5,8 +5,12 @@ Others support the management of these artifacts like query, validate, evidence,
 
 To start let's list the recipes available. "recipe list" gives the complete set.
 
-They are structured as base and overlays. Support for OCP is through an overlay that is specifically tailored to OpenShift's Operator Lifecycle Management (OCP OLM).
+They are structured as base and overlays.
 
-So there are just 2, and they're not tailored to any specific accelerator, os or platform. There's one for training and one for inference.
+Support for OCP is through an overlay that is specifically tailored to OpenShift's Operator Lifecycle Management (OCP OLM).
 
-Others like EKS and GCP are more fine grained.
+So there are just 4, and they're not tailored to any specific accelerator, os or platform. There's a base, and one for training and two for inference.
+
+The ocp-inference-nim is a specialization of ocp-inference, which is a specialization of ocp.
+
+Others like EKS and GCP are more fine grained with options for specifying GPUs.

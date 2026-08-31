@@ -1,7 +1,0 @@
-So lets have a look at the workflow:
-
-First you might take a snapshot of your existing cluster to draw a baseline.
-The recipe command allows you to use this snapshot anlong with other parameters.
-In the bundle command you choose your deployment platform such as a Argo CD or Helm and a configuration is produced.
-
-Deployment is then performed using these tools, and the validation command can use cryptographic hashes to check the deployment is running as expected and has not been tampered with.

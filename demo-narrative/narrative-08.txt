@@ -1,0 +1,9 @@
+We've set up Argo on an local OpenShift deployment here. Instructions are in the README.
+
+I'll deploy the app of apps file, and it pulls the rest from Git.
+
+We soon see this populated on the UI and as modules get deployed in sync waves others change to healthy.
+
+After a few minutes the complete set are up, and if we go back to OpenShift, we can see the installed operators show the complete stack are present.
+
+Nvidia NIM is the top of the stack and depends on all of the others. At this stage generative AI models can be deployed by creating instances of these CRDs.

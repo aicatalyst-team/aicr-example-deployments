@@ -204,29 +204,14 @@ while IFS= read -r -d '' app_file; do
 
     # Check if this is a multi-source application with ref: values
     if grep -q "ref: values" "$app_file"; then
-        # Pattern 2: Multi-source applications - add path to the ref: values source
-        # Find the index of the source with ref: values
-        ref_index=$(yq eval '.spec.sources | to_entries | .[] | select(.value.ref == "values") | .key' "$app_file" 2>/dev/null)
-
-        if [ -n "$ref_index" ]; then
-            # Add path to the ref: values source (bundle dir only, not component folder)
-            update_yaml_field \
+        # Pattern 2: Multi-source applications with "$values/<folder>/values.yaml"
+        # Ensure $values references have the full path
+        if grep -q "\$values/$component_folder/values.yaml" "$app_file"; then
+            update_file_sed \
                 "$app_file" \
-                ".spec.sources[$ref_index].path" \
-                "$BUNDLE_DIR_CLEAN" \
-                "spec.sources[$ref_index].path → $BUNDLE_DIR_CLEAN (values source)" \
-                "true"
-
-            # Update $values references to be relative (strip bundle path prefix if present)
-            # Change: $values/ocp/inference-nim/bundles/007-.../values.yaml
-            # To:     $values/007-.../values.yaml
-            if grep -q "\$values/$BUNDLE_DIR_CLEAN/$component_folder" "$app_file"; then
-                update_file_sed \
-                    "$app_file" \
-                    "\$values/$BUNDLE_DIR_CLEAN/$component_folder" \
-                    "s|\\\$values/$BUNDLE_DIR_CLEAN/|\\\$values/|g" \
-                    "\$values/$BUNDLE_DIR_CLEAN/$component_folder/... → \$values/$component_folder/... (relative to path)"
-            fi
+                "\$values/$component_folder/values.yaml" \
+                "s|(\\\$values/)($component_folder/values.yaml)|\\1$BUNDLE_DIR_CLEAN/\\2|" \
+                "\$values/$component_folder/values.yaml → \$values/$BUNDLE_DIR_CLEAN/$component_folder/values.yaml"
         fi
     else
         # Pattern 1: Local chart applications with "path: <folder>"
