@@ -2,4 +2,8 @@ I also mentioned earlier, the snapshot mechanism. In reality this is not as usef
 
 It really just takes an inventory of the GPUs on a cluster, and only of one node. Since none of the OpenShift recipes are keyed to GPU type, there is little value to be had there at present.
 
-The validate command ...
+The validate command runs a job in a privileged container which we have to give a special service account.
+
+It runs up to 20 tests on the components in the recipe.
+
+The validation will fail however on this local OpenShift installation as there is no GPU present in this cluster.

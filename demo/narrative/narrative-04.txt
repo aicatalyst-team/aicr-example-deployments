@@ -1,0 +1,15 @@
+The recipes comprise a list of components. 
+
+The component catalog lists many and as we scroll through it we can see familiar compoenents, such as nvidia related ones like gpu-operator, nvidia DRA driver and nvsentinel.
+
+There are more general ones like nfd, nodewright, cert-manager, prometheus and gatekeeper. 
+
+There are inference related ones like dynamo, grove, nim and there are training related ones like cube flow trainer.
+
+Then there are resource management components like kai scheduler, kueue and slurm.
+
+Finally at the end there are a set of OLM variants of some of the operators that are already part of OpenShift, like Nvidia Driver, NFD, GPU operator etc.
+
+This has been done to support the operator driven approach of OpenShift, rather than the manifest installs generally used in other Kubernetes platforms.
+
+So the OCP related training and Inference recipes combine these components to target OpenShift.

@@ -1,0 +1,13 @@
+We've set up Argo on an local OpenShift deployment here.
+
+I'll deploy the app of apps file, and it pulls the rest from the git repo.
+
+We soon see this populated on the UI and as modules get deployed in sync waves others change to healthy.
+
+After a few minutes the complete set are up, and if we go back to OpenShift, we can see the installed operators show the complete stack are present.
+
+One thing of note here is that the Nvidia GPU Operator is installed in to the "gpu-operator" namespace, rather than the conventional Openshift choice of "nvidia-gpu-operator".
+
+This means that if you apply it to an already configured OpenShift it will conflict with the existing installation. So as it curently stands AICR is only suitable for clean installs.
+
+Nvidia NIM is not visible in this list of operators view as it is installed by Argo through Helm, not OLM. At this stage generative AI models can be deployed by creating instances of NIM Service or NIMPipeline.

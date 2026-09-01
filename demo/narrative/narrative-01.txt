@@ -1,0 +1,13 @@
+Configuring an AI Stack is a complex task that can include some guess work, a bit of over specing and trial and error.
+
+Nvidia is one of the experts on GPU hardware and related software stacks.
+
+Imagine being able to access over a hundred of their configuration recipes inside a tool. Well that's what AICR gives you.
+
+It stands for AI Cluster Runtime, a name which is a little counterintuitive, as it's really a tool that gives you guided Cluster Configurations, which can then be deployed on a cluster with ArgoCD, Helm, Fuse or other deployment mechanisms.
+
+It supports many different cloud service providers, gpu type, and platforms for training and inference.
+
+The set of recipes are being constantly expanded, through both Nvidia and the community.
+
+The purpose of this demo is to show how it is applicable to OpenShift, and how it can be improved upon.

@@ -1,0 +1,11 @@
+Compatibility is the first concern. It has gone a long way by integrating with Operator Lifecycle Management, but flexibility in the bundle command is needed to help with the namespace.
+
+As far as Components and Recipes are concerned a lot more could be added to align with the OpenShift stack, such as KServe, MLFlow, Kubeflow trainer, Ray Trainer, Trusty AI etc.
+
+Even the OpenShift AI operator itself could be added as a component, and with different recipes for the different configurations it could have.
+
+In addition there could be additional services aimed at configuring managed OpenShift like ROSA, ROKS etc. which could combine the best of the configuration of particular cloud providers, with the best of OpenShift.
+
+Thanks for watching. 
+
+We'll continue to track and investigate AICR for future OpenShift integrations. See you next time.
