@@ -6,6 +6,8 @@ AICR is a tool for creating configurations for AI stacks across a variety of clo
 
 This repo is about experimenting with its support for OpenShift Container Platform (OCP).
 
+See the demo video in the AI Catalyst Platform Team drive at [aicr-demo-aug26.mp4](https://drive.google.com/file/d/1VgnHxtbDtqzzbLTE0XDd_JRs9vG1Seey/view?usp=drive_link).
+
 ## AICR Recipes
 
 AICR Recipes can be created by giving arguments to the `aicr recipe` command and the tool will find the closest recipe template.
