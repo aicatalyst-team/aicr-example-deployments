@@ -1,0 +1,7 @@
+Let's give it a go then. Say we want to setup NIM on OCP we might specify the service, the intent and the platform.
+
+This will match to the recipe template we saw earlier and will produce a recipe for us.
+
+We can see the components that were included and the location of the file.
+
+The file is a bit difficult for human inspection, but at the end we can see components referenced, the deployment order and the way in which the overlays are combined. We can also see the checks for validation for conformance and deployment phases.

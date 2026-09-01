@@ -1,0 +1,287 @@
+{
+    "reportFormat": "CTRF",
+    "specVersion": "0.0.1",
+    "timestamp": "2026-08-31T16:45:33Z",
+    "generatedBy": "aicr",
+    "results": {
+        "tool": {
+            "name": "aicr",
+            "version": "0.20.0"
+        },
+        "summary": {
+            "tests": 14,
+            "passed": 2,
+            "failed": 5,
+            "skipped": 7,
+            "pending": 0,
+            "other": 0,
+            "start": 1788194421564,
+            "stop": 1788194769045
+        },
+        "tests": [
+            {
+                "name": "operator-health",
+                "status": "passed",
+                "duration": 0,
+                "suite": [
+                    "deployment"
+                ],
+                "stdout": [
+                    "time=2026-08-31T16:40:25.408Z level=INFO msg=\"starting check\" name=operator-health",
+                    "time=2026-08-31T16:40:25.415Z level=INFO msg=\"listing pods\" namespace=gpu-operator label=\"app=gpu-operator\"",
+                    "Found 1 gpu-operator pod(s):",
+                    "  gpu-operator-765ffdbd77-q8wgq: Running",
+                    "Running: 1/1",
+                    "time=2026-08-31T16:40:25.423Z level=INFO msg=\"operator-health: passed\" running=1"
+                ]
+            },
+            {
+                "name": "expected-resources",
+                "status": "failed",
+                "duration": 300000,
+                "suite": [
+                    "deployment"
+                ],
+                "message": "[INTERNAL] NicClusterPolicy /nic-cluster-policy: status.state: Invalid value: \"notReady\": Expected value: \"ready\"",
+                "stdout": [
+                    "time=2026-08-31T16:40:28.228Z level=INFO msg=\"starting check\" name=expected-resources",
+                    "  Namespace cert-manager-operator: Active",
+                    "  Namespace gpu-operator: Active",
+                    "  Namespace nvidia-nim: Active",
+                    "  Namespace nvidia-network-operator: Active",
+                    "  Namespace openshift-nfd: Active",
+                    "  Namespace nvidia-dra-driver: Active",
+                    "  Namespace monitoring: Active",
+                    "  [expectedResources] Deployment nvidia-nim/k8s-nim-operator: healthy",
+                    "time=2026-08-31T16:40:28.250Z level=INFO msg=\"running health check assertions\" components=11",
+                    "time=2026-08-31T16:40:28.251Z level=INFO msg=\"health check is a declared no-op; readiness is enforced elsewhere\" component=gpu-operator-ocp-olm annotation=aicr/no-op-check",
+                    "time=2026-08-31T16:40:28.253Z level=INFO msg=\"health check is a declared no-op; readiness is enforced elsewhere\" component=cert-manager-ocp-olm annotation=aicr/no-op-check",
+                    "time=2026-08-31T16:40:28.260Z level=INFO msg=\"health check passed\" component=gpu-operator-ocp",
+                    "time=2026-08-31T16:40:28.261Z level=INFO msg=\"health check is a declared no-op; readiness is enforced elsewhere\" component=network-operator-ocp-olm annotation=aicr/no-op-check",
+                    "time=2026-08-31T16:40:28.263Z level=INFO msg=\"health check passed\" component=nfd-ocp",
+                    "time=2026-08-31T16:40:28.263Z level=INFO msg=\"health check is a declared no-op; readiness is enforced elsewhere\" component=nfd-ocp-olm annotation=aicr/no-op-check",
+                    "time=2026-08-31T16:40:28.303Z level=INFO msg=\"health check passed\" component=k8s-nim-operator-ocp",
+                    "time=2026-08-31T16:40:28.307Z level=INFO msg=\"health check passed\" component=cert-manager-ocp",
+                    "time=2026-08-31T16:40:28.313Z level=INFO msg=\"health check passed\" component=prometheus-adapter-ocp",
+                    "time=2026-08-31T16:45:28.257Z level=WARN msg=\"health check failed\" component=network-operator-ocp step=validate-nic-cluster-policy-ready error=\"[INTERNAL] NicClusterPolicy /nic-cluster-policy: status.state: Invalid value: \\\"notReady\\\": Expected value: \\\"ready\\\"\"",
+                    "  [chainsaw] cert-manager-ocp: health check passed",
+                    "  [chainsaw] cert-manager-ocp-olm: health check passed",
+                    "  [chainsaw] gpu-operator-ocp: health check passed",
+                    "  [chainsaw] gpu-operator-ocp-olm: health check passed",
+                    "  [chainsaw] k8s-nim-operator-ocp: health check passed",
+                    "  [chainsaw] network-operator-ocp-olm: health check passed",
+                    "  [chainsaw] nfd-ocp: health check passed",
+                    "  [chainsaw] nfd-ocp-olm: health check passed",
+                    "  [chainsaw] prometheus-adapter-ocp: health check passed",
+                    "Failed resources:",
+                    "  [chainsaw] network-operator-ocp: health check failed:",
+                    "[INTERNAL] NicClusterPolicy /nic-cluster-policy: status.state: Invalid value: \"notReady\": Expected value: \"ready\"",
+                    "error: [INTERNAL] NicClusterPolicy /nic-cluster-policy: status.state: Invalid value: \"notReady\": Expected value: \"ready\"",
+                    "  [chainsaw] nvidia-dra-driver-gpu-ocp: health check failed:",
+                    "[INTERNAL] DaemonSet nvidia-dra-driver/nvidia-dra-driver-gpu-kubelet-plugin: status.(desiredNumberScheduled \u003e `0`): Invalid value: false: Expected value: true",
+                    "error: [INTERNAL] DaemonSet nvidia-dra-driver/nvidia-dra-driver-gpu-kubelet-plugin: status.(desiredNumberScheduled \u003e `0`): Invalid value: false: Expected value: true",
+                    "time=2026-08-31T16:45:28.265Z level=WARN msg=\"health check failed\" component=nvidia-dra-driver-gpu-ocp step=validate-kubelet-plugin-daemonset-fully-rolled-out error=\"[INTERNAL] DaemonSet nvidia-dra-driver/nvidia-dra-driver-gpu-kubelet-plugin: status.(desiredNumberScheduled \u003e `0`): Invalid value: false: Expected value: true\"",
+                    "time=2026-08-31T16:45:28.265Z level=ERROR msg=FAIL message=\"[INTERNAL] NicClusterPolicy /nic-cluster-policy: status.state: Invalid value: \\\"notReady\\\": Expected value: \\\"ready\\\"\""
+                ]
+            },
+            {
+                "name": "check-nvidia-smi",
+                "status": "skipped",
+                "duration": 0,
+                "suite": [
+                    "deployment"
+                ],
+                "message": "[INTERNAL] no GPU nodes found in the cluster: skip",
+                "stdout": [
+                    "time=2026-08-31T16:45:31.167Z level=INFO msg=\"starting check\" name=check-nvidia-smi",
+                    "Found 0 GPU node(s).",
+                    "RESULT: nodesValidated: 0/0",
+                    "time=2026-08-31T16:45:31.183Z level=INFO msg=SKIP reason=\"[INTERNAL] no GPU nodes found in the cluster: skip\""
+                ],
+                "extra": {
+                    "skipReason": "no-gpu-nodes"
+                }
+            },
+            {
+                "name": "dra-support",
+                "status": "skipped",
+                "duration": 0,
+                "suite": [
+                    "conformance"
+                ],
+                "message": "[INTERNAL] recipe excludes or disables the nvidia-dra-driver-gpu component — DRA is out of scope for this recipe: skip",
+                "stdout": [
+                    "time=2026-08-31T16:45:36.469Z level=INFO msg=\"starting check\" name=dra-support",
+                    "time=2026-08-31T16:45:36.478Z level=INFO msg=SKIP reason=\"[INTERNAL] recipe excludes or disables the nvidia-dra-driver-gpu component — DRA is out of scope for this recipe: skip\""
+                ]
+            },
+            {
+                "name": "gang-scheduling",
+                "status": "skipped",
+                "duration": 0,
+                "suite": [
+                    "conformance"
+                ],
+                "message": "[INTERNAL] KAI scheduler not found and kai-scheduler not declared in recipe — cluster may use a different scheduler: skip",
+                "stdout": [
+                    "time=2026-08-31T16:45:39.399Z level=INFO msg=\"starting check\" name=gang-scheduling",
+                    "time=2026-08-31T16:45:39.414Z level=INFO msg=SKIP reason=\"[INTERNAL] KAI scheduler not found and kai-scheduler not declared in recipe — cluster may use a different scheduler: skip\""
+                ]
+            },
+            {
+                "name": "accelerator-metrics",
+                "status": "failed",
+                "duration": 0,
+                "suite": [
+                    "conformance"
+                ],
+                "message": "[SERVICE_UNAVAILABLE] failed to reach http://nvidia-dcgm-exporter.gpu-operator.svc:9400/metrics: Get \"http://nvidia-dcgm-exporter.gpu-operator.svc:9400/metrics\": dial tcp 10.217.4.149:9400: connect: connection refused",
+                "stdout": [
+                    "time=2026-08-31T16:45:42.423Z level=INFO msg=\"starting check\" name=accelerator-metrics",
+                    "time=2026-08-31T16:45:42.437Z level=ERROR msg=FAIL message=\"[SERVICE_UNAVAILABLE] failed to reach http://nvidia-dcgm-exporter.gpu-operator.svc:9400/metrics: Get \\\"http://nvidia-dcgm-exporter.gpu-operator.svc:9400/metrics\\\": dial tcp 10.217.4.149:9400: connect: connection refused\""
+                ]
+            },
+            {
+                "name": "ai-service-metrics",
+                "status": "failed",
+                "duration": 0,
+                "suite": [
+                    "conformance"
+                ],
+                "message": "[NOT_FOUND] no Prometheus service with port 9090 found in namespace \"monitoring\"",
+                "stdout": [
+                    "time=2026-08-31T16:45:45.406Z level=INFO msg=\"starting check\" name=ai-service-metrics",
+                    "time=2026-08-31T16:45:45.424Z level=ERROR msg=FAIL message=\"[NOT_FOUND] no Prometheus service with port 9090 found in namespace \\\"monitoring\\\"\""
+                ]
+            },
+            {
+                "name": "inference-gateway",
+                "status": "skipped",
+                "duration": 0,
+                "suite": [
+                    "conformance"
+                ],
+                "message": "[INTERNAL] agentgateway not in recipe — inference gateway check applies to inference clusters only: skip",
+                "stdout": [
+                    "time=2026-08-31T16:45:48.471Z level=INFO msg=\"starting check\" name=inference-gateway",
+                    "time=2026-08-31T16:45:48.480Z level=INFO msg=SKIP reason=\"[INTERNAL] agentgateway not in recipe — inference gateway check applies to inference clusters only: skip\""
+                ]
+            },
+            {
+                "name": "pod-autoscaling",
+                "status": "skipped",
+                "duration": 0,
+                "suite": [
+                    "conformance"
+                ],
+                "message": "[INTERNAL] DCGM exporter not found and prometheus-adapter not declared in recipe — GPU metrics not available for HPA: skip",
+                "stdout": [
+                    "time=2026-08-31T16:45:51.515Z level=INFO msg=\"starting check\" name=pod-autoscaling",
+                    "time=2026-08-31T16:45:51.528Z level=INFO msg=SKIP reason=\"[INTERNAL] DCGM exporter not found and prometheus-adapter not declared in recipe — GPU metrics not available for HPA: skip\""
+                ]
+            },
+            {
+                "name": "cluster-autoscaling",
+                "status": "skipped",
+                "duration": 0,
+                "suite": [
+                    "conformance"
+                ],
+                "message": "[INTERNAL] Karpenter not found and cluster platform not recognized (not EKS or GKE): skip",
+                "stdout": [
+                    "time=2026-08-31T16:45:54.514Z level=INFO msg=\"starting check\" name=cluster-autoscaling",
+                    "time=2026-08-31T16:45:54.533Z level=INFO msg=\"Karpenter not found, falling back to platform autoscaling\" platform=\"\"",
+                    "time=2026-08-31T16:45:54.533Z level=INFO msg=SKIP reason=\"[INTERNAL] Karpenter not found and cluster platform not recognized (not EKS or GKE): skip\""
+                ]
+            },
+            {
+                "name": "robust-controller",
+                "status": "skipped",
+                "duration": 0,
+                "suite": [
+                    "conformance"
+                ],
+                "message": "[INTERNAL] no supported AI operator found in recipe (requires dynamo-platform or kubeflow-trainer): skip",
+                "stdout": [
+                    "time=2026-08-31T16:45:57.503Z level=INFO msg=\"starting check\" name=robust-controller",
+                    "time=2026-08-31T16:45:57.511Z level=INFO msg=SKIP reason=\"[INTERNAL] no supported AI operator found in recipe (requires dynamo-platform or kubeflow-trainer): skip\""
+                ]
+            },
+            {
+                "name": "secure-accelerator-access",
+                "status": "failed",
+                "duration": 0,
+                "suite": [
+                    "conformance"
+                ],
+                "message": "[INVALID_REQUEST] GPU allocation policy mismatch: the recipe configures \"device-plugin-extended-resource\" but no Ready, schedulable node advertises allocatable nvidia.com/gpu.\nObserved state:\nDRA (gpu.nvidia.com):              usable=false nodes=[]\nDevice plugin (nvidia.com/gpu):  usable=false nodes=[]\nfull-GPU DRA not usable: DeviceClass gpu.nvidia.com not found\ndevice plugin not usable: no Ready, schedulable node advertises allocatable nvidia.com/gpu\nextended-resource attribution: no DeviceClass maps nvidia.com/gpu to DRA\nnote: node eligibility is Ready+uncordoned only — node taints are not evaluated; workloads must tolerate any node taints\nLikely cause: the cluster has drifted from the recipe (device plugin disabled or unhealthy on the GPU nodes) — redeploy the bundle or fix the recipe (issue #1327)",
+                "stdout": [
+                    "time=2026-08-31T16:46:00.565Z level=INFO msg=\"starting check\" name=secure-accelerator-access",
+                    "--- ClusterPolicy status ---",
+                    "Equivalent: kubectl get clusterpolicy -o wide",
+                    "",
+                    "Name:   cluster-policy",
+                    "State:  ready",
+                    "--- GPU operator pods ---",
+                    "Equivalent: kubectl get pods -n gpu-operator -o wide",
+                    "",
+                    "gpu-operator-765ffdbd77-q8wgq                  ready=1/1 phase=Running node=crc",
+                    "",
+                    "--- GPU operator DaemonSets ---",
+                    "Equivalent: kubectl get ds -n gpu-operator",
+                    "",
+                    "",
+                    "--- ResourceSlices ---",
+                    "Equivalent: kubectl get resourceslices -o wide",
+                    "",
+                    "",
+                    "--- GPU devices in ResourceSlice ---",
+                    "Equivalent: kubectl get resourceslices -o yaml",
+                    "",
+                    "apiVersion: resource.k8s.io/v1",
+                    "items: []",
+                    "kind: ResourceSliceList",
+                    "metadata:",
+                    "  resourceVersion: \"99504\"",
+                    "",
+                    "--- GPU allocation mode ---",
+                    "Equivalent: kubectl get deviceclass gpu.nvidia.com; kubectl get resourceslices; kubectl get nodes -o wide",
+                    "",
+                    "DRA (gpu.nvidia.com):              usable=false nodes=[]",
+                    "Device plugin (nvidia.com/gpu):  usable=false nodes=[]",
+                    "full-GPU DRA not usable: DeviceClass gpu.nvidia.com not found",
+                    "device plugin not usable: no Ready, schedulable node advertises allocatable nvidia.com/gpu",
+                    "extended-resource attribution: no DeviceClass maps nvidia.com/gpu to DRA",
+                    "note: node eligibility is Ready+uncordoned only — node taints are not evaluated; workloads must tolerate any node taints",
+                    "--- GPU allocation policy ---",
+                    "configured policy: device-plugin-extended-resource",
+                    "time=2026-08-31T16:46:00.592Z level=ERROR msg=FAIL message=\"[INVALID_REQUEST] GPU allocation policy mismatch: the recipe configures \\\"device-plugin-extended-resource\\\" but no Ready, schedulable node advertises allocatable nvidia.com/gpu.\\nObserved state:\\nDRA (gpu.nvidia.com):              usable=false nodes=[]\\nDevice plugin (nvidia.com/gpu):  usable=false nodes=[]\\nfull-GPU DRA not usable: DeviceClass gpu.nvidia.com not found\\ndevice plugin not usable: no Ready, schedulable node advertises allocatable nvi... [truncated 376 chars]"
+                ]
+            },
+            {
+                "name": "gpu-operator-health",
+                "status": "failed",
+                "duration": 0,
+                "suite": [
+                    "conformance"
+                ],
+                "message": "[NOT_FOUND] DCGM exporter check failed: [NOT_FOUND] daemonset gpu-operator/nvidia-dcgm-exporter not found: daemonsets.apps \"nvidia-dcgm-exporter\" not found",
+                "stdout": [
+                    "time=2026-08-31T16:46:03.567Z level=INFO msg=\"starting check\" name=gpu-operator-health",
+                    "time=2026-08-31T16:46:03.592Z level=ERROR msg=FAIL message=\"[NOT_FOUND] DCGM exporter check failed: [NOT_FOUND] daemonset gpu-operator/nvidia-dcgm-exporter not found: daemonsets.apps \\\"nvidia-dcgm-exporter\\\" not found\""
+                ]
+            },
+            {
+                "name": "platform-health",
+                "status": "passed",
+                "duration": 0,
+                "suite": [
+                    "conformance"
+                ],
+                "stdout": [
+                    "time=2026-08-31T16:46:06.583Z level=INFO msg=\"starting check\" name=platform-health"
+                ]
+            }
+        ]
+    }
+}

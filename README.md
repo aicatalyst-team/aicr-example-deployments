@@ -6,6 +6,8 @@ AICR is a tool for creating configurations for AI stacks across a variety of clo
 
 This repo is about experimenting with its support for OpenShift Container Platform (OCP).
 
+See the demo video in the AI Catalyst Platform Team drive at [aicr-demo-aug26.mp4](https://drive.google.com/file/d/1VgnHxtbDtqzzbLTE0XDd_JRs9vG1Seey/view?usp=drive_link).
+
 ## AICR Recipes
 
 AICR Recipes can be created by giving arguments to the `aicr recipe` command and the tool will find the closest recipe template.
@@ -118,6 +120,8 @@ ARGOCD_PASSWORD=<password from above>
 argocd login https://$ARGOCD_ROUTE --insecure --username admin --password $ARGOCD_PASSWORD
 ```
 
+> If this doesn't work, try port forwarding the gitops server on port 8080 and use the url `localhost:8080`
+
 At this stage you should be able to list apps, but the list will be empty:
 
 ```bash
@@ -135,4 +139,24 @@ argocd repo add git@github.com:aicatalyst-team/aicr-example-deployments.git --in
 
 ## Apply the configuration
 
-As Argo is full setup now, you can continue from step #3 in the generated README.md of the project [e.g. README.md](./ocp/inference-nim/bundles/README.md).
+As Argo is fully setup now, you can continue from step #3 in the generated README.md of the project [e.g. README.md](./ocp/inference-nim/bundles/README.md).
+
+## AICR Validate
+
+To validate against an openshift cluster, you will need to create a service account in the aicr-validation namespace:
+
+```bash
+# Create the service account (if it doesn't exist)
+oc create serviceaccount aicr-privileged -n aicr-validation
+
+# Grant the privileged SCC to this service account
+oc adm policy add-scc-to-user privileged -z aicr-privileged -n aicr-validation
+```
+
+Then you can proceed with the validation:
+
+```bash
+aicr validate --recipe ocp/inference-nim/recipe-ocp-nim.yaml --service-account-name aicr-privileged --output ocp/inference-nim/validator-results-crc.json
+```
+
+> This will require a GPU by default. Most tests will fail if your cluster doesn't have one.

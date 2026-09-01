@@ -1,4 +1,4 @@
-So lets have a look at the workflow:
+So lets have a look at the workflow.
 
 You can optionally start by taking a snapshot of an existing cluster to draw a baseline.
 

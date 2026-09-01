@@ -1,0 +1,13 @@
+So let's take a look at the tool itself.
+
+To start, let's list the recipes available. "recipe list" gives the complete set.
+
+They are structured as bases, mixins and overlays.
+
+Support for OpenShift OCP is through an overlay that is specifically tailored to OpenShift's Operator Lifecycle Management (OCP OLM).
+
+So there are just 4, and they're not tailored to any specific accelerator, operating system or platform. There's a base, and one for training and two for inference.
+
+The OCP inference NIM is a specialization of OCP inference, which is a specialization of OCP.
+
+Others like EKS and GCP are more fine grained with options for specifying GPUs.

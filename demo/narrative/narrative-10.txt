@@ -1,0 +1,9 @@
+Looking at the overall flow then from start to finish, it's easy to see how a tool like this, with the might of Nvidia behind it, would gain traction, especially across multiple cloud providers.
+
+It's an active project, constantly being updated, with releases every few weeks.
+
+Here's a dashboard they have tracking the validation of new releases.
+
+It really shines in the fast setup of new clusters, and also supports air gapped installations.
+
+So how could this be expanded to work more seamlessly with OpenShift?
