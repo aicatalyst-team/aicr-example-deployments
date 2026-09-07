@@ -1515,8 +1515,16 @@
   <chain id="chain26" out="00:00:48.215">
     <property name="length">1157</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/scondon/git/aicatalyst-team/aicr-example-deployments/demo-narrative/narrative-01.wav</property>
+    <property name="resource">/home/scondon/git/aicatalyst-team/aicr-example-deployments/demo/narrative/narrative-01.wav</property>
     <property name="mlt_service">avformat</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">0</property>
+    <property name="video_index">-1</property>
+    <property name="astream">0</property>
+    <property name="video_delay">0</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">afabe3684889a8684ebb1f9fb16ae15a</property>
+    <property name="shotcut:caption">narrative-01.wav</property>
     <property name="meta.media.nb_streams">1</property>
     <property name="meta.media.0.stream.type">audio</property>
     <property name="meta.media.0.codec.sample_fmt">s16</property>
@@ -1526,20 +1534,20 @@
     <property name="meta.media.0.codec.name">pcm_s16le</property>
     <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
     <property name="meta.media.0.codec.bit_rate">768000</property>
-    <property name="seekable">1</property>
-    <property name="audio_index">0</property>
-    <property name="video_index">-1</property>
-    <property name="astream">0</property>
-    <property name="video_delay">0</property>
-    <property name="xml">was here</property>
-    <property name="shotcut:hash">0148b2ef5fad79e16aa53e9164ba94db</property>
-    <property name="shotcut:caption">narrative-01.wav</property>
   </chain>
   <chain id="chain27" out="00:00:37.454">
     <property name="length">899</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/scondon/git/aicatalyst-team/aicr-example-deployments/demo-narrative/narrative-03.wav</property>
+    <property name="resource">/home/scondon/git/aicatalyst-team/aicr-example-deployments/demo/narrative/narrative-03.wav</property>
     <property name="mlt_service">avformat</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">0</property>
+    <property name="video_index">-1</property>
+    <property name="astream">0</property>
+    <property name="video_delay">0</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">904ce81512c6f8bf9ccee009cd84cc21</property>
+    <property name="shotcut:caption">narrative-03.wav</property>
     <property name="meta.media.nb_streams">1</property>
     <property name="meta.media.0.stream.type">audio</property>
     <property name="meta.media.0.codec.sample_fmt">s16</property>
@@ -1549,20 +1557,20 @@
     <property name="meta.media.0.codec.name">pcm_s16le</property>
     <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
     <property name="meta.media.0.codec.bit_rate">768000</property>
-    <property name="seekable">1</property>
-    <property name="audio_index">0</property>
-    <property name="video_index">-1</property>
-    <property name="astream">0</property>
-    <property name="video_delay">0</property>
-    <property name="xml">was here</property>
-    <property name="shotcut:hash">d24b13c9a5920d2e8ac678956ee2b1b2</property>
-    <property name="shotcut:caption">narrative-03.wav</property>
   </chain>
   <chain id="chain28" out="00:00:28.028">
     <property name="length">673</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/scondon/git/aicatalyst-team/aicr-example-deployments/demo-narrative/narrative-05.wav</property>
+    <property name="resource">/home/scondon/git/aicatalyst-team/aicr-example-deployments/demo/narrative/narrative-05.wav</property>
     <property name="mlt_service">avformat</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">0</property>
+    <property name="video_index">-1</property>
+    <property name="astream">0</property>
+    <property name="video_delay">0</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">c2513e183e0989a8e0b80f87ffc476ee</property>
+    <property name="shotcut:caption">narrative-05.wav</property>
     <property name="meta.media.nb_streams">1</property>
     <property name="meta.media.0.stream.type">audio</property>
     <property name="meta.media.0.codec.sample_fmt">s16</property>
@@ -1572,20 +1580,20 @@
     <property name="meta.media.0.codec.name">pcm_s16le</property>
     <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
     <property name="meta.media.0.codec.bit_rate">768000</property>
-    <property name="seekable">1</property>
-    <property name="audio_index">0</property>
-    <property name="video_index">-1</property>
-    <property name="astream">0</property>
-    <property name="video_delay">0</property>
-    <property name="xml">was here</property>
-    <property name="shotcut:hash">275b8886398811831a16e2affb5523bc</property>
-    <property name="shotcut:caption">narrative-05.wav</property>
   </chain>
   <chain id="chain29" out="00:00:28.028">
     <property name="length">673</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/scondon/git/aicatalyst-team/aicr-example-deployments/demo-narrative/narrative-05.wav</property>
+    <property name="resource">/home/scondon/git/aicatalyst-team/aicr-example-deployments/demo/narrative/narrative-05.wav</property>
     <property name="mlt_service">avformat</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">0</property>
+    <property name="video_index">-1</property>
+    <property name="astream">0</property>
+    <property name="video_delay">0</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">c2513e183e0989a8e0b80f87ffc476ee</property>
+    <property name="shotcut:caption">narrative-05.wav</property>
     <property name="meta.media.nb_streams">1</property>
     <property name="meta.media.0.stream.type">audio</property>
     <property name="meta.media.0.codec.sample_fmt">s16</property>
@@ -1595,20 +1603,20 @@
     <property name="meta.media.0.codec.name">pcm_s16le</property>
     <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
     <property name="meta.media.0.codec.bit_rate">768000</property>
-    <property name="seekable">1</property>
-    <property name="audio_index">0</property>
-    <property name="video_index">-1</property>
-    <property name="astream">0</property>
-    <property name="video_delay">0</property>
-    <property name="xml">was here</property>
-    <property name="shotcut:hash">275b8886398811831a16e2affb5523bc</property>
-    <property name="shotcut:caption">narrative-05.wav</property>
   </chain>
   <chain id="chain30" out="00:00:39.498">
     <property name="length">948</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/scondon/git/aicatalyst-team/aicr-example-deployments/demo-narrative/narrative-07.wav</property>
+    <property name="resource">/home/scondon/git/aicatalyst-team/aicr-example-deployments/demo/narrative/narrative-07.wav</property>
     <property name="mlt_service">avformat</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">0</property>
+    <property name="video_index">-1</property>
+    <property name="astream">0</property>
+    <property name="video_delay">0</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">1eb10744f762836ec5e4612a8a66c8e6</property>
+    <property name="shotcut:caption">narrative-07.wav</property>
     <property name="meta.media.nb_streams">1</property>
     <property name="meta.media.0.stream.type">audio</property>
     <property name="meta.media.0.codec.sample_fmt">s16</property>
@@ -1618,20 +1626,20 @@
     <property name="meta.media.0.codec.name">pcm_s16le</property>
     <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
     <property name="meta.media.0.codec.bit_rate">768000</property>
-    <property name="seekable">1</property>
-    <property name="audio_index">0</property>
-    <property name="video_index">-1</property>
-    <property name="astream">0</property>
-    <property name="video_delay">0</property>
-    <property name="xml">was here</property>
-    <property name="shotcut:hash">586c5d0c420331c37f3ae59b45df1287</property>
-    <property name="shotcut:caption">narrative-07.wav</property>
   </chain>
   <chain id="chain31" out="00:00:55.305">
     <property name="length">1327</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/scondon/git/aicatalyst-team/aicr-example-deployments/demo-narrative/narrative-08.wav</property>
+    <property name="resource">/home/scondon/git/aicatalyst-team/aicr-example-deployments/demo/narrative/narrative-08.wav</property>
     <property name="mlt_service">avformat</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">0</property>
+    <property name="video_index">-1</property>
+    <property name="astream">0</property>
+    <property name="video_delay">0</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">082f0c5495f6d6b962d940f42aee7c64</property>
+    <property name="shotcut:caption">narrative-08.wav</property>
     <property name="meta.media.nb_streams">1</property>
     <property name="meta.media.0.stream.type">audio</property>
     <property name="meta.media.0.codec.sample_fmt">s16</property>
@@ -1641,20 +1649,20 @@
     <property name="meta.media.0.codec.name">pcm_s16le</property>
     <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
     <property name="meta.media.0.codec.bit_rate">768000</property>
-    <property name="seekable">1</property>
-    <property name="audio_index">0</property>
-    <property name="video_index">-1</property>
-    <property name="astream">0</property>
-    <property name="video_delay">0</property>
-    <property name="xml">was here</property>
-    <property name="shotcut:hash">ddd09fffa458c3f43a0a21fe2a137829</property>
-    <property name="shotcut:caption">narrative-08.wav</property>
   </chain>
   <chain id="chain32" out="00:00:34.826">
     <property name="length">836</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/scondon/git/aicatalyst-team/aicr-example-deployments/demo-narrative/narrative-09.wav</property>
+    <property name="resource">/home/scondon/git/aicatalyst-team/aicr-example-deployments/demo/narrative/narrative-09.wav</property>
     <property name="mlt_service">avformat</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">0</property>
+    <property name="video_index">-1</property>
+    <property name="astream">0</property>
+    <property name="video_delay">0</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">19c1a5ab4a6af87451eb07fd9bd115e8</property>
+    <property name="shotcut:caption">narrative-09.wav</property>
     <property name="meta.media.nb_streams">1</property>
     <property name="meta.media.0.stream.type">audio</property>
     <property name="meta.media.0.codec.sample_fmt">s16</property>
@@ -1664,20 +1672,20 @@
     <property name="meta.media.0.codec.name">pcm_s16le</property>
     <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
     <property name="meta.media.0.codec.bit_rate">768000</property>
-    <property name="seekable">1</property>
-    <property name="audio_index">0</property>
-    <property name="video_index">-1</property>
-    <property name="astream">0</property>
-    <property name="video_delay">0</property>
-    <property name="xml">was here</property>
-    <property name="shotcut:hash">64bd8a7d685edf9e7086f9f04f1d1be2</property>
-    <property name="shotcut:caption">narrative-09.wav</property>
   </chain>
   <chain id="chain33" out="00:00:48.340">
     <property name="length">1160</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/scondon/git/aicatalyst-team/aicr-example-deployments/demo-narrative/narrative-11.wav</property>
+    <property name="resource">/home/scondon/git/aicatalyst-team/aicr-example-deployments/demo/narrative/narrative-11.wav</property>
     <property name="mlt_service">avformat</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">0</property>
+    <property name="video_index">-1</property>
+    <property name="astream">0</property>
+    <property name="video_delay">0</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">f714baaa04a7a051bbf6981692747d69</property>
+    <property name="shotcut:caption">narrative-11.wav</property>
     <property name="meta.media.nb_streams">1</property>
     <property name="meta.media.0.stream.type">audio</property>
     <property name="meta.media.0.codec.sample_fmt">s16</property>
@@ -1687,14 +1695,6 @@
     <property name="meta.media.0.codec.name">pcm_s16le</property>
     <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
     <property name="meta.media.0.codec.bit_rate">768000</property>
-    <property name="seekable">1</property>
-    <property name="audio_index">0</property>
-    <property name="video_index">-1</property>
-    <property name="astream">0</property>
-    <property name="video_delay">0</property>
-    <property name="xml">was here</property>
-    <property name="shotcut:hash">5f162452334aa0e26739164932fe2d6a</property>
-    <property name="shotcut:caption">narrative-11.wav</property>
   </chain>
   <playlist id="playlist2">
     <property name="shotcut:audio">1</property>
@@ -1718,8 +1718,16 @@
   <chain id="chain34" out="00:00:32.824">
     <property name="length">788</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/scondon/git/aicatalyst-team/aicr-example-deployments/demo-narrative/narrative-02.wav</property>
+    <property name="resource">/home/scondon/git/aicatalyst-team/aicr-example-deployments/demo/narrative/narrative-02.wav</property>
     <property name="mlt_service">avformat</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">0</property>
+    <property name="video_index">-1</property>
+    <property name="astream">0</property>
+    <property name="video_delay">0</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">53562a7659e0d4cfc42f42826f2024c7</property>
+    <property name="shotcut:caption">narrative-02.wav</property>
     <property name="meta.media.nb_streams">1</property>
     <property name="meta.media.0.stream.type">audio</property>
     <property name="meta.media.0.codec.sample_fmt">s16</property>
@@ -1729,20 +1737,20 @@
     <property name="meta.media.0.codec.name">pcm_s16le</property>
     <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
     <property name="meta.media.0.codec.bit_rate">768000</property>
-    <property name="seekable">1</property>
-    <property name="audio_index">0</property>
-    <property name="video_index">-1</property>
-    <property name="astream">0</property>
-    <property name="video_delay">0</property>
-    <property name="xml">was here</property>
-    <property name="shotcut:hash">8e73cc9b895da47f64a24d9a0ca537d1</property>
-    <property name="shotcut:caption">narrative-02.wav</property>
   </chain>
   <chain id="chain35" out="00:00:53.512">
     <property name="length">1284</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/scondon/git/aicatalyst-team/aicr-example-deployments/demo-narrative/narrative-04.wav</property>
+    <property name="resource">/home/scondon/git/aicatalyst-team/aicr-example-deployments/demo/narrative/narrative-04.wav</property>
     <property name="mlt_service">avformat</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">0</property>
+    <property name="video_index">-1</property>
+    <property name="astream">0</property>
+    <property name="video_delay">0</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">edd682526565f9ab2f6a2bcb66c9a626</property>
+    <property name="shotcut:caption">narrative-04.wav</property>
     <property name="meta.media.nb_streams">1</property>
     <property name="meta.media.0.stream.type">audio</property>
     <property name="meta.media.0.codec.sample_fmt">s16</property>
@@ -1752,20 +1760,20 @@
     <property name="meta.media.0.codec.name">pcm_s16le</property>
     <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
     <property name="meta.media.0.codec.bit_rate">768000</property>
-    <property name="seekable">1</property>
-    <property name="audio_index">0</property>
-    <property name="video_index">-1</property>
-    <property name="astream">0</property>
-    <property name="video_delay">0</property>
-    <property name="xml">was here</property>
-    <property name="shotcut:hash">c4b3751fb61b7ab2c4244c1cbee6a9da</property>
-    <property name="shotcut:caption">narrative-04.wav</property>
   </chain>
   <chain id="chain36" out="00:00:45.003">
     <property name="length">1080</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/scondon/git/aicatalyst-team/aicr-example-deployments/demo-narrative/narrative-06.wav</property>
+    <property name="resource">/home/scondon/git/aicatalyst-team/aicr-example-deployments/demo/narrative/narrative-06.wav</property>
     <property name="mlt_service">avformat</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">0</property>
+    <property name="video_index">-1</property>
+    <property name="astream">0</property>
+    <property name="video_delay">0</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">2d58786556eea86c5d8916fd1e6a9197</property>
+    <property name="shotcut:caption">narrative-06.wav</property>
     <property name="meta.media.nb_streams">1</property>
     <property name="meta.media.0.stream.type">audio</property>
     <property name="meta.media.0.codec.sample_fmt">s16</property>
@@ -1775,20 +1783,20 @@
     <property name="meta.media.0.codec.name">pcm_s16le</property>
     <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
     <property name="meta.media.0.codec.bit_rate">768000</property>
-    <property name="seekable">1</property>
-    <property name="audio_index">0</property>
-    <property name="video_index">-1</property>
-    <property name="astream">0</property>
-    <property name="video_delay">0</property>
-    <property name="xml">was here</property>
-    <property name="shotcut:hash">1c1493481a3b2bfb9379d46a13e63bcb</property>
-    <property name="shotcut:caption">narrative-06.wav</property>
   </chain>
   <chain id="chain37" out="00:00:57.349">
     <property name="length">1376</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/scondon/git/aicatalyst-team/aicr-example-deployments/demo-narrative/narrative-08.wav</property>
+    <property name="resource">/home/scondon/git/aicatalyst-team/aicr-example-deployments/demo/narrative/narrative-08.wav</property>
     <property name="mlt_service">avformat</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">0</property>
+    <property name="video_index">-1</property>
+    <property name="astream">0</property>
+    <property name="video_delay">0</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">082f0c5495f6d6b962d940f42aee7c64</property>
+    <property name="shotcut:caption">narrative-08.wav</property>
     <property name="meta.media.nb_streams">1</property>
     <property name="meta.media.0.stream.type">audio</property>
     <property name="meta.media.0.codec.sample_fmt">s16</property>
@@ -1798,20 +1806,20 @@
     <property name="meta.media.0.codec.name">pcm_s16le</property>
     <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
     <property name="meta.media.0.codec.bit_rate">768000</property>
-    <property name="seekable">1</property>
-    <property name="audio_index">0</property>
-    <property name="video_index">-1</property>
-    <property name="astream">0</property>
-    <property name="video_delay">0</property>
-    <property name="xml">was here</property>
-    <property name="shotcut:hash">7203ba25754a6ad8057484cd51a83366</property>
-    <property name="shotcut:caption">narrative-08.wav</property>
   </chain>
   <chain id="chain38" out="00:00:34.826">
     <property name="length">836</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/scondon/git/aicatalyst-team/aicr-example-deployments/demo-narrative/narrative-09.wav</property>
+    <property name="resource">/home/scondon/git/aicatalyst-team/aicr-example-deployments/demo/narrative/narrative-09.wav</property>
     <property name="mlt_service">avformat</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">0</property>
+    <property name="video_index">-1</property>
+    <property name="astream">0</property>
+    <property name="video_delay">0</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">19c1a5ab4a6af87451eb07fd9bd115e8</property>
+    <property name="shotcut:caption">narrative-09.wav</property>
     <property name="meta.media.nb_streams">1</property>
     <property name="meta.media.0.stream.type">audio</property>
     <property name="meta.media.0.codec.sample_fmt">s16</property>
@@ -1821,20 +1829,20 @@
     <property name="meta.media.0.codec.name">pcm_s16le</property>
     <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
     <property name="meta.media.0.codec.bit_rate">768000</property>
-    <property name="seekable">1</property>
-    <property name="audio_index">0</property>
-    <property name="video_index">-1</property>
-    <property name="astream">0</property>
-    <property name="video_delay">0</property>
-    <property name="xml">was here</property>
-    <property name="shotcut:hash">64bd8a7d685edf9e7086f9f04f1d1be2</property>
-    <property name="shotcut:caption">narrative-09.wav</property>
   </chain>
   <chain id="chain39" out="00:00:27.027">
     <property name="length">649</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/scondon/git/aicatalyst-team/aicr-example-deployments/demo-narrative/narrative-10.wav</property>
+    <property name="resource">/home/scondon/git/aicatalyst-team/aicr-example-deployments/demo/narrative/narrative-10.wav</property>
     <property name="mlt_service">avformat</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">0</property>
+    <property name="video_index">-1</property>
+    <property name="astream">0</property>
+    <property name="video_delay">0</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">4db1c12713865f5ad4574e07b6645455</property>
+    <property name="shotcut:caption">narrative-10.wav</property>
     <property name="meta.media.nb_streams">1</property>
     <property name="meta.media.0.stream.type">audio</property>
     <property name="meta.media.0.codec.sample_fmt">s16</property>
@@ -1844,14 +1852,6 @@
     <property name="meta.media.0.codec.name">pcm_s16le</property>
     <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
     <property name="meta.media.0.codec.bit_rate">768000</property>
-    <property name="seekable">1</property>
-    <property name="audio_index">0</property>
-    <property name="video_index">-1</property>
-    <property name="astream">0</property>
-    <property name="video_delay">0</property>
-    <property name="xml">was here</property>
-    <property name="shotcut:hash">2a8af5e4959e0af6c6c837a1b400581a</property>
-    <property name="shotcut:caption">narrative-10.wav</property>
   </chain>
   <playlist id="playlist3">
     <property name="shotcut:audio">1</property>
@@ -1884,9 +1884,9 @@
     <property name="shotcut">1</property>
     <property name="shotcut:projectAudioChannels">2</property>
     <property name="shotcut:projectFolder">1</property>
-    <property name="shotcut:processingMode">Native8Cpu</property>
     <property name="shotcut:skipConvert">0</property>
     <property name="shotcut:scaleFactor">1.20946</property>
+    <property name="shotcut:processingMode">Native8Cpu</property>
     <track producer="background"/>
     <track producer="playlist0"/>
     <track producer="playlist1"/>

@@ -2,7 +2,7 @@
 # Convert all .txt files in demo/narrative/ to .wav using kokorodoki TTS
 
 REPO_ROOT="$HOME/git/aicatalyst-team/aicr-example-deployments"
-NARRATIVE_DIR="demo-narrative"
+NARRATIVE_DIR="demo/narrative"
 VOICE="af_kore" # Use --list-voices to get a list of available voices
 SPEED=1.20
 LANGUAGE=a # Use --list-languages to get a list of languages

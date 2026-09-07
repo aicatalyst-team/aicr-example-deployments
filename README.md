@@ -8,6 +8,8 @@ This repo is about experimenting with its support for OpenShift Container Platfo
 
 See the demo video in the AI Catalyst Platform Team drive at [aicr-demo-aug26.mp4](https://drive.google.com/file/d/1VgnHxtbDtqzzbLTE0XDd_JRs9vG1Seey/view?usp=drive_link).
 
+See also the [executive summary](https://docs.google.com/document/d/1fs9rPXT7CF5xcSUzIS7Y9cDF6XhGdpRWYA63V56Iswc/edit?usp=drive_link).
+
 ## AICR Recipes
 
 AICR Recipes can be created by giving arguments to the `aicr recipe` command and the tool will find the closest recipe template.
